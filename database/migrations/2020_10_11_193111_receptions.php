@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Calls extends Migration
+class Receptions extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class Calls extends Migration
      */
     public function up()
     {
-        Schema::create('calls', function (Blueprint $table) {
+        Schema::create('receptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('note');
-            $table->string('image');
-            $table->integer('dep_id')->unsigned();
-            $table->foreign('dep_id')->references('id')->on('departments');
+            $table->string('name');
             $table->integer('company_id')->unsigned();
             $table->foreign('company_id')->references('id')->on('companies');
+            $table->integer('dep_id')->unsigned();
+            $table->foreign('dep_id')->references('id')->on('departments');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class Calls extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calls');
+        Schema::dropIfExists('receptions');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Calls extends Migration
+class Departments extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class Calls extends Migration
      */
     public function up()
     {
-        Schema::create('calls', function (Blueprint $table) {
+        Schema::create('departments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('note');
-            $table->string('image');
-            $table->integer('dep_id')->unsigned();
-            $table->foreign('dep_id')->references('id')->on('departments');
+            $table->string('label');
+            $table->string('number');
             $table->integer('company_id')->unsigned();
             $table->foreign('company_id')->references('id')->on('companies');
             $table->timestamps();
@@ -32,6 +30,6 @@ class Calls extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calls');
+        Schema::dropIfExists('departments');
     }
 }

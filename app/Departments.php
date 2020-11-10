@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Departments extends Model
 {
     protected $table = 'departments';
-    protected $fillable = ['label', 'number'];
+    protected $fillable = ['label', 'number', 'company_id'];
 }

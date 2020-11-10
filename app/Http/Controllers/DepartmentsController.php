@@ -23,7 +23,8 @@ class DepartmentsController extends Controller
             try {
                 $department = Departments::create([
                     'label' => $request->label,
-                    'number' => $request->number
+                    'number' => $request->number,
+                    'company_id' => $request->company_id
                 ]);
                 return Response::respondSuccess([
                     'data' => $department
@@ -34,11 +35,17 @@ class DepartmentsController extends Controller
         }
     }
 
-    public function getAll()
+    public function getAll(Request $request)
     {
-        $department = Departments::all();
+        $selected = [];
+        $departments = Departments::all();
+        foreach ($departments as $department) {
+            if($department->company_id == $request->company_id) {
+               array_push($selected, $department);
+            }
+        }
         return Response::respondSuccess([
-            'data' => $department
+            'data' => $selected
         ]);
     }
 

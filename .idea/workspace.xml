@@ -20,29 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce83ad21-2ed1-47dd-9023-53267e28817a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.rnd" beforeDir="false" afterPath="$PROJECT_DIR$/.rnd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/boardCardsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/boardListsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/boardRolesController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/narrativesController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/varsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/boardCards.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/boardLists.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cardRoles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/narratives.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/vars.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_28_172029_card_roles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_28_181752_board_lists.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_28_182010_board_cards.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_28_183027_narratives.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_28_183110_vars.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Departments.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Departments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_112852_departments.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_11_112852_departments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_112952_calls.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_03_112952_calls.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,6 +219,9 @@
       <workItem from="1604433192709" duration="2763000" />
       <workItem from="1604660742586" duration="8001000" />
       <workItem from="1604863882208" duration="52000" />
+      <workItem from="1605015364928" duration="123000" />
+      <workItem from="1605015494347" duration="445000" />
+      <workItem from="1605034661266" duration="10968000" />
     </task>
     <task id="LOCAL-00001" summary="Register + Login">
       <created>1595762865524</created>
@@ -381,18 +369,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="post jobs and more." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603904849141">
+    <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605039674568">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1603904849141" />
+    <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1605039674568" />
     <state x="372" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603903031055">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="372" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1603903031055" />
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604673117830">
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605043871968">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1604673117830" />
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1605043871968" />
     <state x="463" y="95" key="FileChooserDialogImpl" timestamp="1603912949563">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -401,9 +389,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.738@0.0.1366.738" timestamp="1603904684897" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1603959093717">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1605042380891">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1603959093717" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605042380891" />
   </component>
 </project>

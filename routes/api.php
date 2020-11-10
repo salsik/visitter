@@ -26,10 +26,13 @@ Route::middleware('auth:api')->group(function () {
     Route::get('dashboard', 'DepartmentsController@getDashboard');
     Route::get('calls/getAll', 'CallsController@getAll');
     Route::get('calls/remove', 'CallsController@removeCall');
+    Route::get('customer/getAll', 'CustomerController@getCustomers');
+    Route::get('customer/remove', 'CustomerController@removeCustomer');
+    Route::get('receptions/getAll', 'ReceptionController@getReceptions');
+    Route::get('receptions/remove', 'ReceptionController@removeReception');
 });
 
-Route::get('storage/{filename}', function ($filename)
-{
+Route::get('storage/{filename}', function ($filename) {
     $path = storage_path('public/' . $filename);
 
     if (!File::exists($path)) {
