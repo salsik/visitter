@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Calls extends Model
 {
     protected $table = 'calls';
-    protected $fillable = ['rate', 'note', 'name', 'image', 'dep_id'];
+    protected $fillable = ['note','dep_id','company_id', 'image'];
 
     public function withFullUrl()
     {

@@ -18,9 +18,9 @@ class Calls extends Migration
             $table->string('note');
             $table->string('image');
             $table->integer('dep_id')->unsigned();
-            $table->foreign('dep_id')->references('id')->on('departments');
+            $table->foreign('dep_id')->references('id')->on('departments')->onDelete('cascade');
             $table->integer('company_id')->unsigned();
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -17,11 +17,11 @@ class Receptions extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('company_id')->unsigned();
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->integer('dep_id')->unsigned();
-            $table->foreign('dep_id')->references('id')->on('departments');
+            $table->foreign('dep_id')->references('id')->on('departments')->onDelete('cascade');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

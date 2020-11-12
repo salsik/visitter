@@ -17,7 +17,7 @@ class Companies extends Migration
             $table->increments('id');
             $table->string('companyName');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Calls;
+use App\Company;
+use App\Customer;
 use App\Departments;
 use App\Http\Responses\Response;
+use App\Receptions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Prophecy\Call\Call;
@@ -37,25 +40,59 @@ class DepartmentsController extends Controller
 
     public function getAll(Request $request)
     {
-        $selected = [];
         $departments = Departments::all();
         foreach ($departments as $department) {
-            if($department->company_id == $request->company_id) {
-               array_push($selected, $department);
-            }
+            $company = Company::Where('id', $department->company_id)->get()->first();
+            $department['company'] = $company;
         }
         return Response::respondSuccess([
-            'data' => $selected
+            'data' => $departments
         ]);
     }
 
-    public function getDashboard()
+    function getDepartmentsForCompany(Request $request)
     {
-        $depart = Departments::all();
-        $calls = Calls::all();
+        $depart = Departments::where('company_id', $request->id)->get();
+        return Response::respondSuccess([
+            'data' => $depart
+        ]);
+    }
+
+    public function getDashboard(Request $request)
+    {
+        $depart = Departments::where('company_id', $request->id)->get();
+        $calls = Calls::where('company_id', $request->id)->get();
         $data = null;
         $data['department'] = count($depart);
         $data['calls'] = count($calls);
+        $users = [];
+        $receptions = Receptions::all();
+        $customers = Customer::all();
+        foreach ($customers as $customer) {
+            if($customer->company_id == $request->id) {
+                array_push($users, $customer);
+            }
+        }
+        foreach ($receptions as $reception) {
+            if($reception->company_id == $request->id) {
+                array_push($users, $reception);
+            }
+        }
+        $data['users'] = count($users);
+        return Response::respondSuccess([
+            'data' => $data
+        ]);
+    }
+
+    public function getSuperDashboard()
+    {
+        $depart = Departments::all();
+        $calls = Calls::all();
+        $company = Company::all();
+        $data = null;
+        $data['department'] = count($depart);
+        $data['calls'] = count($calls);
+        $data['companies'] = count($company);
         return Response::respondSuccess([
             'data' => $data
         ]);

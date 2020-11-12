@@ -18,7 +18,7 @@ class Departments extends Migration
             $table->string('label');
             $table->string('number');
             $table->integer('company_id')->unsigned();
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->timestamps();
         });
     }

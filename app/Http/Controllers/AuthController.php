@@ -47,7 +47,9 @@ class AuthController extends Controller
                         'user_id' => $user->id,
                     ]);
                 } else if ($user->type === 'reception') {
+                    $name = $user->first_name . ' ' . $user->last_name;
                     $reception = Receptions::create([
+                        'name' => $name,
                         'company_id' => $request->company_id,
                         'dep_id' => $request->dep_id,
                         'user_id' => $user->id,
@@ -91,6 +93,7 @@ class AuthController extends Controller
             foreach ($admins as $admin) {
                 if ($admin->user_id == $user->id) {
                     $user->companyName = $admin->companyName;
+                    $user->company_id = $admin->id;
                 }
             }
         } else if ($user->type === 'customer') {

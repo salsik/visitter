@@ -17,19 +17,26 @@ use Illuminate\Support\Facades\Route;
 */
 Route::post('register', 'AuthController@register');
 Route::post('login', 'AuthController@login');
-Route::get('department/getAll', 'DepartmentsController@getAll');
-Route::post('calls/add', 'CallsController@addCall');
 
 Route::middleware('auth:api')->group(function () {
     Route::post('department/add', 'DepartmentsController@createDepartment');
+    Route::get('department/getAllForCompany', 'DepartmentsController@getDepartmentsForCompany');
+    Route::get('department/getAll', 'DepartmentsController@getAll');
     Route::get('department/remove', 'DepartmentsController@removeDepartment');
     Route::get('dashboard', 'DepartmentsController@getDashboard');
+    Route::get('adminDashboard', 'DepartmentsController@getSuperDashboard');
+    Route::post('calls/add', 'CallsController@addCall');
     Route::get('calls/getAll', 'CallsController@getAll');
+    Route::get('calls/getAllForCompany', 'CallsController@getAllForCompany');
     Route::get('calls/remove', 'CallsController@removeCall');
     Route::get('customer/getAll', 'CustomerController@getCustomers');
     Route::get('customer/remove', 'CustomerController@removeCustomer');
     Route::get('receptions/getAll', 'ReceptionController@getReceptions');
     Route::get('receptions/remove', 'ReceptionController@removeReception');
+    Route::get('company/getAll', 'CompanyController@getAll');
+    Route::get('company/remove', 'CompanyController@removeCompany');
+    Route::get('users/getAllForCompany', 'UserController@getUsersForCompany');
+    Route::get('users/remove', 'UserController@removeUserForCompany');
 });
 
 Route::get('storage/{filename}', function ($filename) {
