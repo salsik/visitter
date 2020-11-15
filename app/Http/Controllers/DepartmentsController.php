@@ -38,6 +38,20 @@ class DepartmentsController extends Controller
         }
     }
 
+    public function editDepartment(Request $request)
+    {
+        try {
+            $department = Departments::where('id', $request->id)->get()->first();
+            $department->number = $request->number;
+            $department->save();
+            return Response::respondSuccess([
+                'data' => $department
+            ]);
+        } catch (\Illuminate\Database\QueryException $e) {
+            return Response::respondError(['error', $e]);
+        }
+    }
+
     public function getAll(Request $request)
     {
         $departments = Departments::all();
@@ -69,12 +83,12 @@ class DepartmentsController extends Controller
         $receptions = Receptions::all();
         $customers = Customer::all();
         foreach ($customers as $customer) {
-            if($customer->company_id == $request->id) {
+            if ($customer->company_id == $request->id) {
                 array_push($users, $customer);
             }
         }
         foreach ($receptions as $reception) {
-            if($reception->company_id == $request->id) {
+            if ($reception->company_id == $request->id) {
                 array_push($users, $reception);
             }
         }

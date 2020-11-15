@@ -19,24 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce83ad21-2ed1-47dd-9023-53267e28817a" name="Default Changelist" comment="">
+    <list default="true" id="ce83ad21-2ed1-47dd-9023-53267e28817a" name="Default Changelist" comment="new comapnies and customers api's.&#10;bug fix.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.rnd" beforeDir="false" afterPath="$PROJECT_DIR$/.rnd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Calls.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Calls.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CallsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CallsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Receptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Receptions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_192651_companies.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_10_192651_companies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_192954_customers.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_10_192954_customers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_11_112852_departments.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_11_112852_departments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_11_193111_receptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_11_193111_receptions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_112952_calls.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_03_112952_calls.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +216,8 @@
       <workItem from="1605015494347" duration="445000" />
       <workItem from="1605034661266" duration="11075000" />
       <workItem from="1605099211836" duration="12617000" />
-      <workItem from="1605170419733" duration="958000" />
+      <workItem from="1605170419733" duration="1307000" />
+      <workItem from="1605477421114" duration="234000" />
     </task>
     <task id="LOCAL-00001" summary="Register + Login">
       <created>1595762865524</created>
@@ -352,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605049738049</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="new comapnies and customers api's.&#10;bug fix.">
+      <created>1605171629365</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1605171629365</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,10 +400,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.738@0.0.1366.738" timestamp="1603904684897" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605049740011">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605171661801">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605049740011" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605171661801" />
     <state x="0" y="0" width="587" height="738" key="find.popup" timestamp="1605103217737">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
