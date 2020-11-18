@@ -112,6 +112,14 @@ class DepartmentsController extends Controller
         ]);
     }
 
+    function getDepartmentById(Request $request)
+    {
+        $department = Departments::where('id', $request->id)->get()->first();
+        return Response::respondSuccess([
+            'data' => $department
+        ]);
+    }
+
     public function removeDepartment(Request $request)
     {
         $item = Departments::Where('id', $request->id)->get()->first();

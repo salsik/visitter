@@ -23,6 +23,8 @@ Route::middleware('auth:api')->group(function () {
     Route::get('department/getAllForCompany', 'DepartmentsController@getDepartmentsForCompany');
     Route::get('department/getAll', 'DepartmentsController@getAll');
     Route::get('department/remove', 'DepartmentsController@removeDepartment');
+    Route::post('department/update', 'DepartmentsController@editDepartment');
+    Route::get('department/getById', 'DepartmentsController@getDepartmentById');
     Route::get('dashboard', 'DepartmentsController@getDashboard');
     Route::get('adminDashboard', 'DepartmentsController@getSuperDashboard');
     Route::post('calls/add', 'CallsController@addCall');

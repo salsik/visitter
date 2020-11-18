@@ -22,6 +22,7 @@
     <list default="true" id="ce83ad21-2ed1-47dd-9023-53267e28817a" name="Default Changelist" comment="new comapnies and customers api's.&#10;bug fix.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +218,10 @@
       <workItem from="1605034661266" duration="11075000" />
       <workItem from="1605099211836" duration="12617000" />
       <workItem from="1605170419733" duration="1307000" />
-      <workItem from="1605477421114" duration="234000" />
+      <workItem from="1605477421114" duration="281000" />
+      <workItem from="1605522258071" duration="3784000" />
+      <workItem from="1605616982262" duration="14000" />
+      <workItem from="1605709703638" duration="1763000" />
     </task>
     <task id="LOCAL-00001" summary="Register + Login">
       <created>1595762865524</created>
@@ -345,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605171629365</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="new comapnies and customers api's.&#10;bug fix.">
+      <created>1605477710381</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1605477710382</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,10 +411,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.738@0.0.1366.738" timestamp="1603904684897" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605171661801">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605477716194">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605171661801" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605477716194" />
     <state x="0" y="0" width="587" height="738" key="find.popup" timestamp="1605103217737">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
