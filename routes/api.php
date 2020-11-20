@@ -37,6 +37,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('receptions/remove', 'ReceptionController@removeReception');
     Route::get('company/getAll', 'CompanyController@getAll');
     Route::get('company/remove', 'CompanyController@removeCompany');
+    Route::post('company/updateSelfie', 'CompanyController@requestSelfie');
     Route::get('users/getAllForCompany', 'UserController@getUsersForCompany');
     Route::get('users/remove', 'UserController@removeUserForCompany');
 });

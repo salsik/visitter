@@ -34,4 +34,16 @@ class CompanyController extends Controller
             return Response::respondSuccess();
         }
     }
+
+    public function requestSelfie(Request $request)
+    {
+        $item = Company::Where('id', $request->id)->get()->first();
+        if ($item == null) {
+            return Response::respondError(['error', 'File not exist']);
+        } else {
+            $item->request_selfie = $request->request_selfie;
+            $item->save();
+            return Response::respondSuccess();
+        }
+    }
 }

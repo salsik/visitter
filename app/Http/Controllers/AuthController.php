@@ -37,6 +37,7 @@ class AuthController extends Controller
                 if ($user->type === 'admin') {
                     $company = Company::create([
                         'companyName' => $request->companyName,
+                        'request_selfie' => '0',
                         'user_id' => $user->id,
                     ]);
                 } else if ($user->type === 'customer') {
@@ -94,6 +95,7 @@ class AuthController extends Controller
                 if ($admin->user_id == $user->id) {
                     $user->companyName = $admin->companyName;
                     $user->company_id = $admin->id;
+                    $user->request_selfie = $admin->request_selfie;
                 }
             }
         } else if ($user->type === 'customer') {
