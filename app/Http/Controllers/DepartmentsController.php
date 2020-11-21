@@ -52,6 +52,21 @@ class DepartmentsController extends Controller
         }
     }
 
+    public function updateDepartment(Request $request)
+    {
+        try {
+            $department = Departments::where('id', $request->id)->get()->first();
+            $department->label = $request->label;
+            $department->number = $request->number;
+            $department->save();
+            return Response::respondSuccess([
+                'data' => $department
+            ]);
+        } catch (\Illuminate\Database\QueryException $e) {
+            return Response::respondError(['error', $e]);
+        }
+    }
+
     public function getAll(Request $request)
     {
         $departments = Departments::all();

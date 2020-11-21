@@ -22,6 +22,7 @@ Route::middleware('auth:api')->group(function () {
     Route::post('department/add', 'DepartmentsController@createDepartment');
     Route::get('department/getAllForCompany', 'DepartmentsController@getDepartmentsForCompany');
     Route::get('department/getAll', 'DepartmentsController@getAll');
+    Route::post('department/updateAll', 'DepartmentsController@updateDepartment');
     Route::get('department/remove', 'DepartmentsController@removeDepartment');
     Route::post('department/update', 'DepartmentsController@editDepartment');
     Route::get('department/getById', 'DepartmentsController@getDepartmentById');
@@ -37,9 +38,11 @@ Route::middleware('auth:api')->group(function () {
     Route::get('receptions/remove', 'ReceptionController@removeReception');
     Route::get('company/getAll', 'CompanyController@getAll');
     Route::get('company/remove', 'CompanyController@removeCompany');
+    Route::get('company/getCompany', 'CompanyController@getCompany');
     Route::post('company/updateSelfie', 'CompanyController@requestSelfie');
     Route::get('users/getAllForCompany', 'UserController@getUsersForCompany');
     Route::get('users/remove', 'UserController@removeUserForCompany');
+    Route::post('users/update', 'UserController@updateUser');
 });
 
 Route::get('storage/{filename}', function ($filename) {

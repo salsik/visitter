@@ -22,6 +22,14 @@ class CompanyController extends Controller
             'data' => $companies
         ]);
     }
+
+    public function getCompany(Request $request) {
+        $company = Company::where('id', $request->id)->get()->first();
+        return Response::respondSuccess([
+            'data' => $company
+        ]);
+    }
+
     public function removeCompany(Request $request)
     {
         $item = Company::Where('id', $request->id)->get()->first();

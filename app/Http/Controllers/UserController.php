@@ -40,11 +40,46 @@ class UserController extends Controller
             $mini = User::where('id', $user->user_id)->get()->first();
             $user['first_name'] = $mini->first_name;
             $user['last_name'] = $mini->last_name;
+            $user['email'] = $mini->email;
+            $user['password'] = $mini->password;
             $user['type'] = $mini->type;
         }
         return Response::respondSuccess([
             'data' => $users
         ]);
+    }
+
+    function updateUser(Request $request) {
+        if($request->location === 'customer') {
+            $customer = Customer::where('id', $request->id)->get()->first();
+            $customer->name = $request->name;
+            $customer->save();
+            $user = User::where('id', $customer->user_id)->get()->first();
+            $user->first_name = $request->first_name;
+            $user->last_name = $request->last_name;
+            $user->email = $request->email;
+            $user->type = $request->type;
+            if( $user->password !== $request->password) {
+                $user->password = bcrypt($request->password);
+            }
+            $user->save();
+            return Response::respondSuccess();
+        } else {
+            $reception = Receptions::where('id', $request->id)->get()->first();
+            $reception->name = $request->name;
+            $reception->dep_id = $request->dep_id;
+            $reception->save();
+            $user = User::where('id', $reception->user_id)->get()->first();
+            $user->first_name = $request->first_name;
+            $user->last_name = $request->last_name;
+            $user->email = $request->email;
+            $user->type = $request->type;
+            if( $user->password !== $request->password) {
+                $user->password = bcrypt($request->password);
+            }
+            $user->save();
+            return Response::respondSuccess();
+        }
     }
 
     function removeUserForCompany(Request $request)
