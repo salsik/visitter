@@ -38,8 +38,8 @@ class UserController extends Controller
         }
         foreach ($users as $user) {
             $mini = User::where('id', $user->user_id)->get()->first();
-            $user['first_name'] = $mini->first_name;
-            $user['last_name'] = $mini->last_name;
+            $user['username'] = $mini->username;
+            $user['login_id'] = $mini->login_id;
             $user['email'] = $mini->email;
             $user['password'] = $mini->password;
             $user['type'] = $mini->type;
@@ -55,8 +55,8 @@ class UserController extends Controller
             $customer->name = $request->name;
             $customer->save();
             $user = User::where('id', $customer->user_id)->get()->first();
-            $user->first_name = $request->first_name;
-            $user->last_name = $request->last_name;
+            $user->username = $request->username;
+            $user->login_id = $request->login_id;
             $user->email = $request->email;
             $user->type = $request->type;
             if( $user->password !== $request->password) {
@@ -70,8 +70,8 @@ class UserController extends Controller
             $reception->dep_id = $request->dep_id;
             $reception->save();
             $user = User::where('id', $reception->user_id)->get()->first();
-            $user->first_name = $request->first_name;
-            $user->last_name = $request->last_name;
+            $user->username = $request->username;
+            $user->login_id = $request->login_id;
             $user->email = $request->email;
             $user->type = $request->type;
             if( $user->password !== $request->password) {

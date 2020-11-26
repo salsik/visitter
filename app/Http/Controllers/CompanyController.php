@@ -14,8 +14,7 @@ class CompanyController extends Controller
         $companies = Company::all();
         foreach ($companies as $company) {
             $user = User::where('id', $company->user_id)->get()->first();
-            $company['first_name']= $user->first_name;
-            $company['last_name']= $user->last_name;
+            $company['username']= $user->username;
             $company['email']= $user->email;
         }
         return Response::respondSuccess([

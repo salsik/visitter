@@ -18,8 +18,8 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'type' => 'required',
-            'first_name' => 'required',
-            'last_name' => 'required',
+            'username' => 'required',
+            'login_id' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
@@ -28,8 +28,8 @@ class AuthController extends Controller
         } else {
             try {
                 $user = User::create([
-                    'first_name' => $request->first_name,
-                    'last_name' => $request->last_name,
+                    'username' => $request->username,
+                    'login_id' => $request->login_id,
                     'email' => $request->email,
                     'type' => $request->type,
                     'password' => bcrypt($request->password)
@@ -41,16 +41,14 @@ class AuthController extends Controller
                         'user_id' => $user->id,
                     ]);
                 } else if ($user->type === 'customer') {
-                    $name = $user->first_name . ' ' . $user->last_name;
                     $customer = Customer::create([
-                        'name' => $name,
+                        'name' => $request->username,
                         'company_id' => $request->company_id,
                         'user_id' => $user->id,
                     ]);
                 } else if ($user->type === 'reception') {
-                    $name = $user->first_name . ' ' . $user->last_name;
                     $reception = Receptions::create([
-                        'name' => $name,
+                        'name' => $request->username,
                         'company_id' => $request->company_id,
                         'dep_id' => $request->dep_id,
                         'user_id' => $user->id,
@@ -82,6 +80,27 @@ class AuthController extends Controller
             ]);
         } else {
             return Response::respondError('Wrong Email or Password');
+        }
+    }
+
+
+    public function loginUser(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'login_id' => 'required|exists:users,login_id',
+            'password' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return Response::respondError($validator->getMessageBag());
+        }
+        if (Auth::attempt(['login_id' => $request->login_id, 'password' => $request->password])) {
+            $user = Auth::user();
+
+            return Response::respondSuccess([
+                $this->getUser($user)
+            ]);
+        } else {
+            return Response::respondError('Wrong user id or Password');
         }
     }
 
