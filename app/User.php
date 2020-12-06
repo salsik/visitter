@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'login_id', 'email', 'password', 'type'
+        'username', 'login_id', 'onesignal_id', 'email', 'password', 'type'
     ];
 
     /**

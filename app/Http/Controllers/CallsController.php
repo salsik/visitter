@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use App\Calls;
 use App\Company;
 use App\Departments;
+use App\Receptions;
+use App\User;
 use App\Http\Responses\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use OneSignal;
 
 class CallsController extends Controller
 {
@@ -79,5 +82,20 @@ class CallsController extends Controller
             $item->delete();
             return Response::respondSuccess();
         }
+    }
+
+    public function sendNotification(Request $request)
+    {
+        $department = Departments::where('id', $request->id)->get()->first();
+        $receptions = Receptions::where('company_id', $department->company_id)->where('dep_id', $department->id)->get()->all();
+        foreach($receptions as $reception)
+        {
+            $user = User::where('id', $reception->user_id)->get()->first();
+            $userId = $user->onesignal_id;
+            $fields['include_player_ids'] = [$userId];
+            $message = 'Hey ! You have a call !!!';
+            \OneSignal::sendPush($fields, $message);
+        }
+        return Response::respondSuccess();
     }
 }

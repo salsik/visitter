@@ -92,4 +92,12 @@ class UserController extends Controller
             return Response::respondSuccess();
         }
     }
+
+    function updateOnesignal(Request $request)
+    {
+        $user = User::where('id', $request->id)->get()->first();
+        $user->onesignal_id = $request->onesignal_id;
+        $user->save();
+        return Response::respondSuccess(['data', $user]);
+    }
 }

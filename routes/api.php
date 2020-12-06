@@ -44,6 +44,8 @@ Route::middleware('auth:api')->group(function () {
     Route::get('users/getAllForCompany', 'UserController@getUsersForCompany');
     Route::get('users/remove', 'UserController@removeUserForCompany');
     Route::post('users/update', 'UserController@updateUser');
+    Route::get('users/updateNotification', 'UserController@updateOnesignal');
+    Route::get('users/sendNotification', 'CallsController@sendNotification');
 });
 
 Route::get('storage/{filename}', function ($filename) {
