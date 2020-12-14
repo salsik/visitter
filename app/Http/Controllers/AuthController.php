@@ -38,6 +38,7 @@ class AuthController extends Controller
                     $company = Company::create([
                         'companyName' => $request->companyName,
                         'request_selfie' => '0',
+                        'selfie_message' => 'We Would love if you can take a selfie',
                         'user_id' => $user->id,
                     ]);
                 } else if ($user->type === 'customer') {
@@ -119,6 +120,7 @@ class AuthController extends Controller
                     $user->companyName = $admin->companyName;
                     $user->company_id = $admin->id;
                     $user->request_selfie = $admin->request_selfie;
+                    $user->selfie_message = $admin->selfie_message;
                 }
             }
         } else if ($user->type === 'customer') {

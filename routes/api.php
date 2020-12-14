@@ -20,6 +20,7 @@ Route::post('login', 'AuthController@login');
 Route::post('login_user', 'AuthController@loginUser');
 
 Route::middleware('auth:api')->group(function () {
+    Route::post('company/updateRegister', 'CompanyController@updateCompany');
     Route::post('department/add', 'DepartmentsController@createDepartment');
     Route::get('department/getAllForCompany', 'DepartmentsController@getDepartmentsForCompany');
     Route::get('department/getAll', 'DepartmentsController@getAll');

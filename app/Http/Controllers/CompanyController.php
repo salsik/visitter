@@ -15,6 +15,8 @@ class CompanyController extends Controller
         foreach ($companies as $company) {
             $user = User::where('id', $company->user_id)->get()->first();
             $company['username']= $user->username;
+            $company['login_id']= $user->login_id;
+            $company['password']= $user->password;
             $company['email']= $user->email;
         }
         return Response::respondSuccess([
@@ -27,6 +29,27 @@ class CompanyController extends Controller
         return Response::respondSuccess([
             'data' => $company
         ]);
+    }
+
+    public function updateCompany(Request $request)
+    {
+        $company = Company::Where('id', $request->id)->get()->first();
+        if ($company == null) {
+            return Response::respondError(['error', 'File not exist']);
+        } else {
+            $user = User::Where('id', $request->user_id)->get()->first();
+            $company->companyName = $request->companyName;
+            $user->username = $request->username;
+            $user->email = $request->email;
+            $user->login_id = $request->login_id;
+            if ($request->password != $user->password)
+            {
+                $user->password = $request->password;
+            }
+            $company->save();
+            $user->save();
+            return Response::respondSuccess();
+        }
     }
 
     public function removeCompany(Request $request)
@@ -49,6 +72,7 @@ class CompanyController extends Controller
             return Response::respondError(['error', 'File not exist']);
         } else {
             $item->request_selfie = $request->request_selfie;
+            $item->selfie_message = $request->selfie_message;
             $item->save();
             return Response::respondSuccess();
         }
