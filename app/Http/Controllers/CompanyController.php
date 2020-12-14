@@ -44,7 +44,7 @@ class CompanyController extends Controller
             $user->login_id = $request->login_id;
             if ($request->password != $user->password)
             {
-                $user->password = $request->password;
+                $user->password = bcrypt($request->password);
             }
             $company->save();
             $user->save();
