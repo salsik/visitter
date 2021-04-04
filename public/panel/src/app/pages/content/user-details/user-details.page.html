@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Details</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="grid-center">
+        <h1 class="center">{{authService.currentUser?.company?.selfie_message}}</h1>
+        <ion-grid class="center">
+            <img class="profile" [src]="profile"/>
+            <ion-button class="camera-btn" fill="clear" (click)="openCamera()">
+                <ion-icon slot="icon-only" name="camera"></ion-icon>
+            </ion-button>
+        </ion-grid>
+        <ion-button class="submit-btn" (click)="submit()" expand="block">Next</ion-button>
+    </ion-grid>
+    <img class="btm" src="../../../../assets/icon/selfie.svg"/>
+</ion-content>

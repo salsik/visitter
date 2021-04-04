@@ -1,0 +1,29 @@
+<ion-content>
+    <ion-grid class="top-grid">
+        <ion-grid>
+            <ion-label>Welcome To</ion-label>
+            <h1>Visitter</h1>
+            <ion-label>Please sign in to continue</ion-label>
+        </ion-grid>
+    </ion-grid>
+    <ion-grid class="btm-grid">
+        <form [formGroup]="form" (ngSubmit)="form.valid && submit()">
+            <ion-item>
+                <ion-label position="stacked">Login ID</ion-label>
+                <ion-input type="text" placeholder="User ID" formControlName="login_id"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Password</ion-label>
+                <ion-input style="font-size: 16px" clearOnEdit="false" [type]="passwordType" placeholder="Password"
+                           formControlName="password"></ion-input>
+                <ion-button class="password-button" slot="end" fill="clear" type="button" (click)='hideShowPassword()'>
+                    <ion-icon [name]="passwordIcon" class="passwordIcon"></ion-icon>
+                </ion-button>
+            </ion-item>
+            <ion-button class="submit" type="submit" expand="block">
+                <ion-spinner *ngIf="isLoading"></ion-spinner>
+                Sign In
+            </ion-button>
+        </form>
+    </ion-grid>
+</ion-content>

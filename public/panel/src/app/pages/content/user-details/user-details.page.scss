@@ -1,0 +1,120 @@
+.profile-pic {
+  max-width: 200px;
+  max-height: 200px;
+  display: block;
+}
+
+.file-upload {
+  display: none;
+}
+
+.circle {
+  border-radius: 1000px !important;
+  overflow: hidden;
+  width: 128px;
+  height: 128px;
+  border: 8px solid rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 72px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.p-image {
+  position: absolute;
+  top: 167px;
+  right: 30px;
+  color: #666666;
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.upload-button {
+  font-size: 1.2em;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
+
+img {
+  width: 50vw;
+}
+
+.center {
+  text-align: center;
+}
+
+.camera-btn {
+  border-radius: 50%;
+  background: var(--ion-color-primary);
+  color: #fafafa;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: -2vh;
+  left: -5vw;
+}
+
+.btm {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  left: 25px;
+  transform: rotate(90deg);
+}
+
+.submit-btn {
+  --border-radius: 50px;
+  width: 46vw;
+  margin-left: 27vw;
+  margin-top: 4vh;
+  position: relative;
+  z-index: 1000;
+}
+
+@media (min-width: 760px) {
+  .btm {
+    height: 55vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .camera-btn {
+    left: -3vw;
+  }
+
+  .grid-center {
+    display: grid;
+    justify-content: center;
+  }
+
+  .submit-btn {
+    --border-radius: 50px;
+    width: 31vw;
+    margin-top: 1vh;
+    margin-left: auto;
+    position: relative;
+    z-index: 1000;
+  }
+}

@@ -1,0 +1,41 @@
+<ion-content>
+  <ion-buttons class="top" *ngIf="waiting">
+    <ion-button fill="none" (click)="authService.destroy_session()">
+      <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-grid class="wrapper"></ion-grid>
+  <ion-grid *ngIf="!waiting" class="relative-grid">
+    <ion-grid>
+      <ion-icon class="user blob" src="assets/icon/user.svg"></ion-icon>
+      <p class="name">User</p>
+      <p class="timer">{{timer}}</p>
+    </ion-grid>
+
+    <ion-grid class="dismiss-grid">
+      <ion-button expand="round" *ngIf="showAnswer" class="answer" fill="clear" (click)="answerCall()">
+        <ion-icon slot="icon-only" name="call-outline"></ion-icon>
+      </ion-button>
+      <ion-button  expand="round" *ngIf="!showAnswer" [class]="!mute ? 'mute' : 'active'" fill="clear" (click)="muteCall()">
+        <ion-icon slot="icon-only" [name]="getIconMute()"></ion-icon>
+      </ion-button>
+      <ion-button expand="round" class="dismiss" fill="clear" (click)="endCall()">
+        <ion-icon slot="icon-only" name="recording-outline"></ion-icon>
+      </ion-button>
+    </ion-grid>
+  </ion-grid>
+  <audio id="callRing" style="visibility: hidden" loop>
+    <source src="assets/music/ringCall.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  <ion-grid class="waiting" *ngIf="waiting">
+    <ion-grid class="center">
+      <ion-grid class="block">
+        <ion-icon [name]="icon"></ion-icon>
+        <br />
+        <p>{{waitText}}</p>
+      </ion-grid>
+    </ion-grid>
+  </ion-grid>
+  <div *ngIf="showBackdrop" class="backdrop"></div>
+</ion-content>
