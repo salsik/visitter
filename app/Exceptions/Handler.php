@@ -48,8 +48,21 @@ class Handler extends ExceptionHandler
      *
      * @throws \Throwable
      */
-    public function render($request, Throwable $exception)
+    public function render($request, Throwable $e)
     {
-        return parent::render($request, $exception);
+
+  if ($e instanceof ModelNotFoundException) {
+        return response()->view('errors.404', [], 404);
+    }
+
+    // custom error message
+    if ($e instanceof \ErrorException) {
+        return response()->view('errors.500', [], 500);
+    } else {
+        return parent::render($request, $e);
+    }
+
+    return parent::render($request, $e);
+
     }
 }

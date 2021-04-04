@@ -1,0 +1,211 @@
+
+.dx-radiobutton-checked .dx-radiobutton-icon-dot {
+  background: $default-primary !important;
+}
+
+.tabs-header {
+  font-size: 16px !important;
+}
+
+.dx-accordion-item-opened .dx-accordion-item-title {
+  background-color: $default-primary !important;
+  color: white !important;
+
+  h1 {
+    color: white !important;
+  }
+}
+
+.dx-accordion-item-title {
+  background-color: transparent !important;
+  height: 50px !important;
+  transition: all .4s ease;
+
+  h1 {
+    font-size: 20px;
+  }
+}
+
+.dx-rtl .dx-accordion-item-title:before {
+  color: white !important;
+}
+
+.dx-accordion-item-body {
+  background-color: #90528214 !important;
+  padding: 2% !important;
+}
+
+.actions {
+  display: block !important;
+  text-align: center !important;
+}
+
+.dx-datagrid-headers {
+  background-color: $default-primary !important;
+  color: white !important;
+}
+
+.accordion {
+  width: 100% !important;
+}
+
+.dx-state-focused.dx-accordion-item {
+  border-color: #ddd !important;
+}
+
+.dx-treeview .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-focused > .dx-treeview-item {
+  background-color: transparent !important;
+}
+
+.dx-treeview .dx-treeview-node:not(.dx-treeview-item-with-checkbox).dx-state-focused > .dx-treeview-item * {
+  font-weight: 600;
+  font-size: 18px;
+  color: $default-primary !important;
+  text-shadow: 1px 2px 7px #248e47;
+}
+
+.dx-treeview .dx-treeview-item .dx-treeview-item-content span {
+  font-weight: 600;
+}
+
+.tree-view {
+  width: 100%;
+  padding: 10px !important;
+  border: 1.5px solid $default-primary;
+  border-radius: 10px;
+  background-color: #e4e3e4;
+  box-shadow: 5px 0px 5px 0px #9e9d9e;
+  margin-bottom: 20px !important;
+  min-height: 400px !important;
+  max-height: 500px !important;
+}
+
+.tree-content {
+  align-items: start !important;
+}
+
+.sub-header {
+  width: 100%;
+}
+
+.sub-header span {
+  width: 100%;
+  font-size: 20px;
+  color: $default-primary;
+  text-align: center;
+}
+
+.grid-container-scroll {
+  max-height: 440px;
+  height: auto;
+}
+
+.submit-btn {
+  height: 45px;
+  width: 200px;
+}
+
+.dx-datagrid .dx-link {
+  color: $default-primary !important;
+}
+
+.dx-overlay-shader {
+  background-color: rgba(167, 156, 156, 0.53);
+}
+
+.gap-top {
+  margin-top: 10px;
+}
+
+.errorMsg {
+  color: red;
+}
+
+.dx-tab.dx-tab-selected {
+  background-color: #f1ecf0 !important;
+}
+
+.dx-tab {
+  background-color: #e4e3e4 !important;
+  font-size: 16px !important;
+  color: $default-primary !important;
+}
+
+.dx-tab .dx-icon {
+  width: 25px !important;
+  height: 25px !important;
+  background-size: 25px 25px !important;
+}
+
+.dx-tab-panel {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 50px;
+}
+
+.dx-tabpanel .dx-tabs {
+  background-color: $default-primary !important;
+}
+
+.dx-tabpanel .dx-tab {
+  color: white !important;
+  background-color: $default-primary !important;
+}
+
+.dx-tabpanel .dx-tab.dx-tab-selected {
+  color: $default-primary !important;
+  background-color: #f1ecf0 !important;
+}
+
+.dx-button .dx-icon {
+  color: white !important;
+}
+
+.minHeader {
+  height: 8%;
+  text-align: center;
+  margin: 1%;
+  background: #e4e3e4;
+  color: $default-primary;
+  padding: 1%;
+}
+
+.min-header-field {
+  height: 8%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  background: #e4e3e4;
+  color: $default-primary;
+  padding: 1%;
+}
+
+.dx-popup-title.dx-toolbar {
+  color: white !important;
+  background-color: $default-primary !important;
+}
+
+.dx-popup-title .dx-closebutton .dx-icon {
+  color: white !important;
+}
+
+.dx-popup-title .dx-closebutton.dx-state-hover {
+  background-color: $default-primary !important;
+}
+
+.popup .dx-popup-content {
+  background-color: #f1ecf0;
+  font: 400 14px/20px Cairo;
+}
+
+.dx-accordion-item-opened .dx-accordion-item-title:before {
+  color: white;
+}
+
+.dx-tab {
+  transition: all .4s ease;
+}
+
+.dx-tab.dx-tab-selected {
+  background-color: $default-primary !important;
+  color: white !important;
+}

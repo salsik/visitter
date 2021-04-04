@@ -11,7 +11,7 @@ class Calls extends Model
 
     public function withFullUrl()
     {
-        $this->image = env('APP_URL') .'/storage/app/public/'. $this->image;
+        $this->image = env('APP_URL') .'/storage/'. $this->image;
         return $this;
     }
 }
