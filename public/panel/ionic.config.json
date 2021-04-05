@@ -1,7 +1,0 @@
-{
-  "name": "skywayCall",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
