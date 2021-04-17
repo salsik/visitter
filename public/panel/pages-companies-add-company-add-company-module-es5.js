@@ -149,7 +149,49 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _c0 = ["ngForm"];
 
-    function AddCompanyComponent_app_loader_16_Template(rf, ctx) {
+    function AddCompanyComponent_div_16_p_3_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 15);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var item_r35 = ctx.$implicit;
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](item_r35);
+      }
+    }
+
+    function AddCompanyComponent_div_16_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 13);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h2");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Errors:");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AddCompanyComponent_div_16_p_3_Template, 2, 1, "p", 14);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r32.errors);
+      }
+    }
+
+    function AddCompanyComponent_app_loader_17_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-loader");
       }
@@ -168,6 +210,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _this = _possibleConstructorReturn(this, _getPrototypeOf(AddCompanyComponent).call(this, injector));
         _this.isLoading = false;
         _this.isEdit = false;
+        _this.errors = [];
 
         if (_this.router.getCurrentNavigation().extras.state) {
           _this.data = _this.router.getCurrentNavigation().extras.state.data;
@@ -213,6 +256,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this2 = this;
 
           console.log(form);
+          this.errors = [];
           this.isLoading = true;
 
           if (this.isEdit) {
@@ -220,15 +264,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             form['user_id'] = this.data.user_id;
             this.authService.updateCompany(form).subscribe(function (res) {
               console.log(res);
-              _this2.isLoading = false;
-              /* ngForm.resetForm();
-              this.form.onReset(); */
 
-              _this2.mytemplateForm.reset();
+              if (res.result === 'success') {
+                _this2.isLoading = false;
+                /* ngForm.resetForm();
+                this.form.onReset(); */
 
-              _this2.utilService.showAddedSuccessfullyToast();
+                _this2.mytemplateForm.reset();
 
-              _this2.router.navigateByUrl('pages/companies').then();
+                _this2.utilService.showAddedSuccessfullyToast();
+
+                _this2.router.navigateByUrl('pages/companies').then();
+              } else {
+                var error = res.error_description;
+                var key;
+                _this2.isLoading = false;
+
+                for (key in error) {
+                  console.log('Key: ' + key);
+                  console.log('Value: ' + error[key]);
+                  console.log(typeof error[key]);
+
+                  if (typeof error[key] === 'string') {
+                    if (error[key] !== 'error') {
+                      _this2.errors.push(error[key]);
+                    }
+                  } else if (typeof error[key] === 'object') {
+                    if (error[0] === 'error') {
+                      _this2.errors.push('LoginID already exist !');
+                    } else {
+                      _this2.errors.push(error[key][0]);
+                    }
+                  } else {
+                    _this2.errors.push('LoginID already exist !');
+                  }
+                }
+              }
             }, function (err) {
               console.log(err);
               _this2.isLoading = false;
@@ -237,16 +308,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
           } else {
             this.authService.register(form).subscribe(function (res) {
-              console.log(res);
-              _this2.isLoading = false;
-              /* ngForm.resetForm();
-              this.form.onReset(); */
+              if (res.result === 'success') {
+                console.log(res);
+                _this2.isLoading = false;
+                /* ngForm.resetForm();
+                this.form.onReset(); */
 
-              _this2.mytemplateForm.reset();
+                _this2.mytemplateForm.reset();
 
-              _this2.utilService.showAddedSuccessfullyToast();
+                _this2.utilService.showAddedSuccessfullyToast();
 
-              _this2.router.navigateByUrl('pages/companies');
+                _this2.router.navigateByUrl('pages/companies');
+              } else {
+                var error = res.error_description;
+                var key;
+                _this2.isLoading = false;
+
+                for (key in error) {
+                  console.log('Key: ' + key);
+                  console.log('Value: ' + error[key]);
+                  console.log(typeof error[key]);
+
+                  if (typeof error[key] === 'string') {
+                    if (error[key] !== 'error') {
+                      _this2.errors.push(error[key]);
+                    }
+                  } else if (typeof error[key] === 'object') {
+                    if (error[0] === 'error') {
+                      _this2.errors.push('LoginID already exist !');
+                    } else {
+                      _this2.errors.push(error[key][0]);
+                    }
+                  } else {
+                    _this2.errors.push('LoginID already exist !');
+                  }
+                }
+              }
             }, function (err) {
               console.log(err);
               _this2.isLoading = false;
@@ -279,19 +376,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       },
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-      decls: 17,
-      vars: 3,
-      consts: [[1, "ng-pristine", "ng-valid", "row", 3, "formGroup", "ngSubmit"], ["ngForm", "ngForm"], [1, "form-group", "col-md-6"], ["formControlName", "username", "type", "text", "placeholder", "Username", 1, "form-control"], ["formControlName", "login_id", "type", "text", "placeholder", "Login ID", 1, "form-control"], [1, "form-group", "col-md-12"], ["formControlName", "companyName", "type", "text", "placeholder", "Company Name", 1, "form-control"], ["formControlName", "email", "type", "email", "placeholder", "Email", 1, "form-control"], ["formControlName", "password", "type", "password", "placeholder", "Password", 1, "form-control"], [1, "mrg-top-20", "width-100", "text-right"], ["type", "submit", 1, "btn", "btn-info"], [4, "ngIf"]],
+      decls: 18,
+      vars: 4,
+      consts: [[1, "ng-pristine", "ng-valid", "row", 3, "formGroup", "ngSubmit"], ["ngForm", "ngForm"], [1, "form-group", "col-md-6"], ["formControlName", "username", "type", "text", "placeholder", "Username", 1, "form-control"], ["formControlName", "login_id", "type", "text", "placeholder", "Login ID", 1, "form-control"], [1, "form-group", "col-md-12"], ["formControlName", "companyName", "type", "text", "placeholder", "Company Name", 1, "form-control"], ["formControlName", "email", "type", "email", "placeholder", "Email", 1, "form-control"], ["formControlName", "password", "type", "password", "placeholder", "Password", 1, "form-control"], [1, "mrg-top-20", "width-100", "text-right"], ["type", "submit", 1, "btn", "btn-info"], ["class", "errors", 4, "ngIf"], [4, "ngIf"], [1, "errors"], ["class", "error", 4, "ngFor", "ngForOf"], [1, "error"]],
       template: function AddCompanyComponent_Template(rf, ctx) {
         if (rf & 1) {
-          var _r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "form", 0, 1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngSubmit", function AddCompanyComponent_Template_form_ngSubmit_1_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r36);
 
             var _r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
 
@@ -340,9 +437,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, AddCompanyComponent_div_16_Template, 4, 1, "div", 11);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, AddCompanyComponent_app_loader_16_Template, 1, 0, "app-loader", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, AddCompanyComponent_app_loader_17_Template, 1, 0, "app-loader", 12);
         }
 
         if (rf & 2) {
@@ -356,11 +455,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.errors.length);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isLoading);
         }
       },
-      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _shared_components_loader_loader__WEBPACK_IMPORTED_MODULE_4__["LoaderComponent"]],
-      styles: [".row[_ngcontent-%COMP%] {\n  margin-left: 2%;\n  margin-right: 2%;\n  margin-top: 2%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY29tcGFuaWVzL2FkZC1jb21wYW55L0U6XFxQcm9qZWN0c1xcYW5ndWxhclxccmVjZXB0aW9uc2t5d2F5LWRhc2hib2FyZC9zcmNcXGFwcFxccGFnZXNcXGNvbXBhbmllc1xcYWRkLWNvbXBhbnlcXGFkZC1jb21wYW55LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9wYWdlcy9jb21wYW5pZXMvYWRkLWNvbXBhbnkvYWRkLWNvbXBhbnkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9jb21wYW5pZXMvYWRkLWNvbXBhbnkvYWRkLWNvbXBhbnkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucm93IHtcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyJTtcclxuICBtYXJnaW4tdG9wOiAyJTtcclxufVxyXG4iLCIucm93IHtcbiAgbWFyZ2luLWxlZnQ6IDIlO1xuICBtYXJnaW4tcmlnaHQ6IDIlO1xuICBtYXJnaW4tdG9wOiAyJTtcbn0iXX0= */"]
+      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _shared_components_loader_loader__WEBPACK_IMPORTED_MODULE_4__["LoaderComponent"]],
+      styles: [".row[_ngcontent-%COMP%] {\n  margin-left: 2%;\n  margin-right: 2%;\n  margin-top: 2%;\n}\n\n.errors[_ngcontent-%COMP%] {\n  margin-left: 2%;\n  margin-right: 2%;\n  margin-top: 2%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY29tcGFuaWVzL2FkZC1jb21wYW55L0U6XFxQcm9qZWN0c1xcYW5ndWxhclxcY2FsbHMtZGFzaGJvYXJkL3NyY1xcYXBwXFxwYWdlc1xcY29tcGFuaWVzXFxhZGQtY29tcGFueVxcYWRkLWNvbXBhbnkuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2NvbXBhbmllcy9hZGQtY29tcGFueS9hZGQtY29tcGFueS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7QUNDRjs7QURFQTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2NvbXBhbmllcy9hZGQtY29tcGFueS9hZGQtY29tcGFueS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5yb3cge1xyXG4gIG1hcmdpbi1sZWZ0OiAyJTtcclxuICBtYXJnaW4tcmlnaHQ6IDIlO1xyXG4gIG1hcmdpbi10b3A6IDIlO1xyXG59XHJcblxyXG4uZXJyb3JzIHtcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyJTtcclxuICBtYXJnaW4tdG9wOiAyJTtcclxufVxyXG4iLCIucm93IHtcbiAgbWFyZ2luLWxlZnQ6IDIlO1xuICBtYXJnaW4tcmlnaHQ6IDIlO1xuICBtYXJnaW4tdG9wOiAyJTtcbn1cblxuLmVycm9ycyB7XG4gIG1hcmdpbi1sZWZ0OiAyJTtcbiAgbWFyZ2luLXJpZ2h0OiAyJTtcbiAgbWFyZ2luLXRvcDogMiU7XG59Il19 */"]
     });
     /*@__PURE__*/
 

@@ -3237,7 +3237,7 @@ window.global = window;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\Projects\angular\receptionskyway-dashboard\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! E:\Projects\angular\calls-dashboard\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })
