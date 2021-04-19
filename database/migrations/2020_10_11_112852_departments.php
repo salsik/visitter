@@ -16,7 +16,6 @@ class Departments extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('label');
-            $table->string('capability_token');
             $table->string('number');
             $table->integer('company_id')->unsigned();
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
