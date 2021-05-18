@@ -27,12 +27,15 @@ class CallsController extends Controller
         if ($validator->fails()) {
             return Response::respondError($validator->getMessageBag());
         } else {
-            $cover = $request->file('image');
-            $extension = $cover->getClientOriginalExtension();
-            Storage::disk('public')->put($cover->getFilename() . '.' . $extension, File::get($cover));
+            $image = base64_decode($request->image);
+            // $cover = $request->file('image');
+            $cover = $image;
+            $fileName = "vissiter-".time()."";
+            $extension ='jpg';
+            Storage::disk('public')->put($fileName .'.' . $extension, $cover);
 
             $slider = Calls::create([
-                'image' => $cover->getFilename() . '.' . $extension,
+                'image' => $fileName . '.' . $extension,
                 'note' => $request->note,
                 'company_id' => $request->company_id,
                 'dep_id' => $request->dep_id
