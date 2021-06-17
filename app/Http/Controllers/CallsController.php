@@ -20,7 +20,7 @@ class CallsController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'note' => 'required',
-            'image' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,pdf,tiff,svg,ai,psd',
             'company_id' => 'required',
             'dep_id' => 'required'
         ]);
@@ -28,17 +28,17 @@ class CallsController extends Controller
             return Response::respondError($validator->getMessageBag());
         } else {
             $cover = $request->file('image');
-            $fileName = "vissiter-".time()."";
+            $fileName = "vissiter-" . time() . "";
             $extension = $cover->getClientOriginalExtension();
             Storage::disk('public')->put($fileName . '.' . $extension, File::get($cover));
 
-           /*
-            // $image = base64_decode($request->image);
-            $cover = $request->file('image');
-            // $cover = $image;
-            $fileName = "vissiter-".time()."";
-            $extension ='jpg';
-            Storage::disk('public')->put($fileName .'.' . $extension, $cover);*/
+            /*
+             // $image = base64_decode($request->image);
+             $cover = $request->file('image');
+             // $cover = $image;
+             $fileName = "vissiter-".time()."";
+             $extension ='jpg';
+             Storage::disk('public')->put($fileName .'.' . $extension, $cover);*/
 
             $slider = Calls::create([
                 'image' => $fileName . '.' . $extension,
@@ -83,7 +83,8 @@ class CallsController extends Controller
     }
 
 
-    public function removeCall(Request $request) {
+    public function removeCall(Request $request)
+    {
         $item = Calls::Where('id', $request->id)->get()->first();
         if ($item == null) {
             return Response::respondError(['error', 'File not exist']);
@@ -97,8 +98,7 @@ class CallsController extends Controller
     {
         $department = Departments::where('id', $request->id)->get()->first();
         $receptions = Receptions::where('company_id', $department->company_id)->where('dep_id', $department->id)->get()->all();
-        foreach($receptions as $reception)
-        {
+        foreach ($receptions as $reception) {
             $user = User::where('id', $reception->user_id)->get()->first();
             $userId = $user->onesignal_id;
             $fields['include_player_ids'] = [$userId];
@@ -106,5 +106,13 @@ class CallsController extends Controller
             \OneSignal::sendPush($fields, $message);
         }
         return Response::respondSuccess();
+    }
+
+    public function getCompanies()
+    {
+        $companies = Company::all();
+        return Response::respondSuccess([
+            'data' => $companies
+        ]);
     }
 }
