@@ -1,0 +1,103 @@
+{
+  "app": {
+    "saved": "正常に保存",
+    "serverError": "サーバーエラー",
+    "error": "何かが間違っています。後でもう一度試してください ！",
+    "success": "成功、正常に追加",
+    "update": "更新成功",
+    "delete": "正常に削除されました",
+    "ok": "承認する",
+    "cancel": "キャンセル",
+    "warning": "警告",
+    "removeCaution": "本当に捨ててもいいのかい？"
+  },
+  "menu": {
+    "home": "家",
+    "companies": "企業",
+    "departments": "部署/部門",
+    "calls": "架電記録",
+    "users": "ユーザー",
+    "settings": "設定",
+    "logout": "ログアウト",
+    "loading": "読み込み中",
+    "noData": "データなし",
+    "resetPassword": "パスワードを再設定する"
+  },
+  "login": {
+    "login": "ログイン",
+    "pleaseEnter": "ログインするにはメールアドレスとパスワードを入力してください",
+    "username": "ユーザーネーム",
+    "password": "パスワード",
+    "keepMeSign": "n次回から自動ログインをする",
+    "forgotPassword": "パスワードを忘れた方",
+    "forgotPasswordMsg": "パスワードを回復するために管理者にメールを送信します",
+    "emailOrLoginId": "メールアドレスまたはログインID",
+    "resetPassword": "パスワードを再設定する",
+    "resetSuccess": "送信されたメッセージは、管理者が24時間以内にあなたに話しかけるのを待ってください",
+    "wrongEmailOrLoginId": "間違ったメールアドレスまたはログインIDを確認して、もう一度お試しください",
+    "welcome": "コールセンターへようこそ"
+  },
+  "dashboard": {
+    "companies": "企業",
+    "departments": "部署/部門",
+    "calls": "架電記録",
+    "users": "ユーザー",
+    "seeDetails": "詳細確認"
+  },
+  "companies": {
+    "addNewCompany": "y企業追加",
+    "username": "ユーザーネーム",
+    "email": "メールアドレス",
+    "loginId": "ログインID",
+    "companyName": "企業名",
+    "action": "管理"
+  },
+  "addCompany": {
+    "username": "ユーザーネーム",
+    "loginId": "ログインID",
+    "companyName": "企業名",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "updateCompany": "更新会社",
+    "createCompany": "会社を作る"
+  },
+  "departments": {
+    "addDepartment": "部署/部門を追加する",
+    "label": "ラベル名",
+    "number": "番号",
+    "companyName": "企業名",
+    "action": "管理"
+  },
+  "calls": {
+    "companies": "企業",
+    "department": "部署/部門",
+    "date": "日付"
+  },
+  "settings": {
+    "takeSelfie": "撮影機能",
+    "takeSelfieDesc": "訪問者への写真撮影機能を追加する",
+    "selfieMsg": "写真撮影時にユーザーへ表示するメッセージ",
+    "save": "保存",
+    "passwordChanged": "パスワードは正常に変更されました",
+    "newPassword": "新しいパスワード",
+    "resetMsg": "ここから古いパスワードを新しいパスワードに変更できます"
+  },
+  "users": {
+    "username": "ユーザーネーム",
+    "loginId": "ログインID",
+    "userType": "ユーザータイプ",
+    "addNewUser": "ユーザーを追加する",
+    "chooseType": "タイプを選択",
+    "reception": "受信",
+    "customer": "お客様",
+    "action": "管理",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "type": "タイプ",
+    "chooseDepartment": "部門を選択",
+    "createUser": "ユーザーを作成",
+    "updateUser": "ユーザーの更新",
+    "createMsg": "この詳細を入力して、会社の新しいユーザーを作成します",
+    "updateMsg": "この詳細を入力して、会社のユーザーを更新します"
+  }
+}
